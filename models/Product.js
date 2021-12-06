@@ -31,6 +31,9 @@ product_name: {
     price: {
       type: DataTypes.DECIMAL,
   allowNull: false, 
+  validate: {
+    isDecimal: true
+  }
     },
     // price
     // Decimal
@@ -40,6 +43,10 @@ product_name: {
 stock : {
   type: DataTypes.INTEGER,
   allowNull: false,
+
+  validate: {
+    isNumeric: true
+  }
 },
 
     // stock
