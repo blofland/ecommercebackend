@@ -19,6 +19,10 @@ ProductTag.init(
 // Uses auto increment
 product_id : {
   type: DataTypes.INTEGER,
+  references: {
+    model: 'Product',
+    key: 'id',
+  }
 },
 // product_id
 // Integer
@@ -26,6 +30,10 @@ product_id : {
 
 tag_id : {
   type: DataTypes.INTEGER,
+  references: {
+    model: 'Tag',
+    key: 'id'
+  }
 
 }
 // tag_id
