@@ -26,14 +26,21 @@ router.get('/', (req, res) => {
     Product.findOne({
       where: {
         id: req.params.id
-      }
+      },
+      attributes: ['product_name', 'price', 'stock'],
+      include: [
+        {
+          model: Tag,
+          attributes: ['tag_ids']
+        }
+      ]
     })
       .then(dbProductData => {
         if (!dbProductData) {
-          res.status(404).json({ message: 'No Product found' });
+          res.status(404).json({ message: 'No product found with this id' });
           return;
         }
-        res.json(dbUserData);
+        res.json(dbProductData);
       })
       .catch(err => {
         console.log(err);
