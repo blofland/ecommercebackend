@@ -16,7 +16,7 @@ Category.init(
     // Doesn't allow null values
     // Set as primary key
     // Uses auto increment
-  categoryName: {
+  category_name: {
     type: DataTypes.STRING,
     allowNull: false, 
     // category_name

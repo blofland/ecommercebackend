@@ -20,34 +20,30 @@ Product.init(
     // Doesn't allow null values
     // Set as primary key
     // Uses auto increment
-product_name: {
-  type: DataTypes.STRING,
-  allowNull: false, 
-},    
+    product_name: {
+      type: DataTypes.STRING,
+      allowNull: false, 
+    },    
     // product_name
     // String
     // Doesn't allow null values
 
     price: {
       type: DataTypes.DECIMAL,
-  allowNull: false, 
-  validate: {
-    isDecimal: true
-  }
+      allowNull: false, 
+      validate: {isDecimal: true}
     },
     // price
     // Decimal
     // Doesn't allow null values
     // Validates that the value is a decimal
 
-stock : {
-  type: DataTypes.INTEGER,
-  allowNull: false,
-defaultValue: 10,
-  validate: {
-    isNumeric: true
-  }
-},
+    stock : {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 10,
+      validate: {isNumeric: true}
+    },
 
     // stock
     // Integer
@@ -58,7 +54,7 @@ defaultValue: 10,
     category_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'Category',
+        model: 'category',
         key: 'id'
       }
 
